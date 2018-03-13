@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TUBES 1</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <style media="screen">
+      .col{
+        padding-top: 76px;
+      }
+
+      #btnadd{
+        width: 600px;
+      }
+
+      #nama, #harga, #stock{
+        background-color: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col" id="column1">
+          <img src="sepatu.jpg" id="gambar" alt="logo" width="400" height="254">
+        </div>
+        <div class="col" id="column2">
+          <form action="/action_page.php">
+             <div class="form-group">
+               <label for="nama">Nama:</label>
+               <input disabled type="text" class="form-control" id="nama" placeholder="Converse Jack Purcell Pro">
+             </div>
+             <div class="form-group">
+               <label for="harga">Harga:</label>
+               <input disabled type="text" class="form-control" id="harga" placeholder="Rp.1.000.000">
+             </div>
+             <div class="form-group">
+               <label for="stock">Stock:</label>
+               <input disabled type="text" class="form-control" id="stock" placeholder="Stock 5 tersedia">
+             </div>
+             <button type="submit" class="btn btn-default" id="btnadd">Add Barang</button>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
