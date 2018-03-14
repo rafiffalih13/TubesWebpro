@@ -3,9 +3,14 @@
 	background-color: gray;
 	/*width: 102.6%;*/
 	/*right: 1.5%;*/
+	max-height: 700px;
+	max-width: auto;
+	overflow: hidden;
 }
 #img-carousel{
-	width: 100%;
+	max-height: 700px;
+	max-width: 1200px;
+	overflow: hidden;
 }
 #category-bar{
 	/*background-color: lightgray;*/
@@ -30,5 +35,10 @@
 	height: 200px;
 }
 a{
+	color: black;
+	text-decoration: none;
+}
+a:hover{
+	color: black;
 	text-decoration: none;
 }
