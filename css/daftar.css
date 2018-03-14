@@ -8,3 +8,18 @@
 .left{
 	text-align: left;
 }
+.daftar{
+	font-weight: bold;
+	font-size: 25px;
+}
+.tmbl{
+	text-align: center;
+	width: 100%;
+	background-color: red;
+	color: white;
+	font-weight: bold;
+
+}
+.disini{
+	padding-bottom: 10px;
+}
