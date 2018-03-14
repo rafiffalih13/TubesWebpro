@@ -18,8 +18,8 @@
 	width: 100%;
 }
 #category{
-	font-weight: bold;
-	color: red;
+	/*font-weight: bold;*/
+	color: #343a40;
 	/*font-family: "Comic Sans MS";*/
 }
 #item{
