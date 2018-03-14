@@ -6,19 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/daftar.css">
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script src="js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript">
-		function validate(evt) {
-		  var theEvent = evt || window.event;
-		  var key = theEvent.keyCode || theEvent.which;
-		  key = String.fromCharCode( key );
-		  var regex = /[0-9]|\./;
-		  if( !regex.test(key) ) {
-		    theEvent.returnValue = false;
-		    if(theEvent.preventDefault) theEvent.preventDefault();
-		    alert("Harus diisi oleh numeric")
-		  }
-		}
-	</script>
+	<script type="text/javascript" src="js/daftar.js"></script>
 </head>
 <body>
 	<div class="container">
