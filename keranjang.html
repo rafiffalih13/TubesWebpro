@@ -6,71 +6,52 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
-    <style media="screen">
-
-      .container{
-        padding-top: 76px;
-      }
-
-      #col2{
-        width: 500px;
-      }
-
-      #trash{
-        width: 30px;
-        height: 30px;
-      }
-
-      #sepatu{
-        width: 300px;
-        height: 300px;
-      }
-
-      #tas{
-        width: 400px;
-        height: 300px;
-      }
-
-      #btnbuy{
-        width: 300px;
-      }
-
-      h1{
-        text-align: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
-
-      /* #form2{
-        border-right-style: solid;
-        border-right-color: black;
-      } */
-
-      #form1{
-        padding-left: 50px;
-      }
-
-      #gambar{
-        width: 300px;
-        height: 254px;
-      }
-
-      #kuantitas, #kuantitas2{
-        width: 50px;
-        text-align: center;
-        border: none;
-      }
-
-      #plus, #min{
-        display: inline;
-      }
-
-      .container{
-        grid-row-gap: 100px;
-      }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- CSS NAVBAR -->
+    <link rel="stylesheet" type="text/css" href="css/tampilan.css" />
+    <link rel="stylesheet" href="css/keranjang.css">
   </head>
   <body>
+
+    <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">&#x2630;</button> <a class="navbar-brand kiri" href="#"><img src="img/logo.png" alt="" width="auto" height="30"> </a>
+        <div
+        class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav ">
+                <li class="dropdown nav-item"> <a class="dropdown-toggle kiri nav-link" data-toggle="dropdown" href="#">KATEGORI <span>   </span> <span class="caret"></span></a>
+                    <ul
+                    class="dropdown-menu">
+                        <li class="dropdown-item"><a href="#">Merchandise</a>
+                        </li>
+                        <li class="dropdown-item"><a href="#">Extras</a>
+                        </li>
+                        <li class="dropdown-item"><a href="#">Media</a>
+                        </li>
+            </ul>
+            </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <form class="form-inline" role="search">
+                        <div class="input-group cari">
+                            <input type="text" class="form-control" placeholder="search" name="q">
+                            <div class="input-group-btn">
+                                <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav ml-auto samping">
+                <li class="nav-item"><a href="#myPage" class="nav-link"><span class="glyphicon glyphicon-user"></span><span>       </span>DAFTAR</a>
+                </li>
+                <li class="nav-item"><a href="#band" class="nav-link"><span class="fa fa-man"></span><span>    </span>MASUK</a>
+                </li>
+            </ul>
+            </div>
+    </nav>
+
     <div class="container">
       <div class="row">
         <div class="col-sm-3.5" >
@@ -84,7 +65,7 @@
              </div>
              <div class="form-group">
                <label for="harga">Harga:</label>
-               <input disabled type="text" class="form-control" id="harga" placeholder="Rp.1.000.000">
+               <input disabled type="text" class="form-control" id="harga" value="1000000">
              </div>
              <div class="form-group">
                <label for="stock">Kuantitas:</label> <br>
@@ -99,15 +80,15 @@
           <form action="/action_page.php" id="form1">
              <div class="form-group">
                <label for="total">Total Harga Barang :</label>
-               <input disabled type="text" class="form-control" id="total" placeholder="Rp.1.500.000">
+               <input disabled type="text" class="form-control" id="total" >
              </div>
              <div class="form-group">
                <label for="total">Biaya Pengiriman:</label>
-               <input disabled type="text" class="form-control" id="total" placeholder="Rp.300.000">
+               <input disabled type="text" class="form-control" id="ongkir" value="300000">
              </div>
              <div class="form-group">
                <label for="total">Total:</label>
-               <input disabled type="text" class="form-control" id="total" placeholder="Rp.1.800.000">
+               <input disabled type="text" class="form-control" id="all" >
              </div>
              <button type="submit" class="btn btn-default" id="btnbuy">Lanjutkan Pembayaran</button>
           </form>
@@ -127,7 +108,7 @@
              </div>
              <div class="form-group">
                <label for="harga">Harga:</label>
-               <input disabled type="text" class="form-control" id="harga" value="Rp.500.000">
+               <input disabled type="text" class="form-control" id="harga1" value="500000">
              </div>
              <div class="form-group">
                <label for="stock">Kuantitas:</label> <br>
@@ -141,46 +122,8 @@
       </div>
 
     </div>
+    <script type="text/javascript" src="js/keranjang.js">
 
-    <script type="text/javascript">
-      jQuery(function(){
-      var j = jQuery;
-      var addInput = '#kuantitas';
-      var addInput2 = '#kuantitas2';
-      var n = 1;
-      var m = 1;
-
-      j(addInput).val(n);
-      j(addInput2).val(m);
-
-      j('#plus').on('click', function(){
-        j(addInput).val(++n);
-      })
-
-      j('#min').on('click', function(){
-
-        if (n >= 2) {
-          j(addInput).val(--n);
-        } else {
-
-        }
-      });
-
-      j('#plus2').on('click', function(){
-        j(addInput2).val(++m);
-      })
-
-      j('#min2').on('click', function(){
-
-        if (m >= 2) {
-          j(addInput2).val(--m);
-        } else {
-
-        }
-      });
-      });
-
-      var text = document.getElementById('harga').val
      </script>
   </body>
 </html>
