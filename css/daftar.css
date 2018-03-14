@@ -4,6 +4,7 @@
 }
 .center {
 	text-align: center;
+	background-color: #a3a3c2;
 }
 .left{
 	text-align: left;
@@ -22,4 +23,7 @@
 }
 .disini{
 	padding-bottom: 10px;
+}
+.baru{
+	bg-color: #a3a3c2;
 }
