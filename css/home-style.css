@@ -1,12 +1,16 @@
 #myCarousel{
 	margin-bottom: 50px;
 	background-color: gray;
-	width: 102.6%;
-	right: 1.5%;
+	/*width: 102.6%;*/
+	/*right: 1.5%;*/
+}
+#img-carousel{
+	width: 100%;
 }
 #category-bar{
-	background-color: lightgray;
+	/*background-color: lightgray;*/
 	padding: 0px 20px 0px 20px;
+	width: 100%;
 }
 #category{
 	font-weight: bold;
@@ -16,10 +20,15 @@
 #item{
 	text-align: center;
 	margin: 20px 20px 30px 20px;
-	background-color: gray;
+	/*background-color: gray;*/
+	border: 1px solid gray;
+	
 }
 #item-img{
 	padding: 20px 0px 0px 0px;
 	width: 200px;
 	height: 200px;
+}
+a{
+	text-decoration: none;
 }
