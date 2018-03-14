@@ -31,8 +31,8 @@
 }
 #item-img{
 	padding: 20px 0px 0px 0px;
-	width: 200px;
-	height: 200px;
+	max-width: 200px;
+	max-height: 200px;
 }
 a{
 	color: black;
