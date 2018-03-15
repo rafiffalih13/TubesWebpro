@@ -1,10 +1,12 @@
 .logo{
-	width: 150px;
-	height: 150px;
+	width: 120px;
+	height: 120px;
+	margin-top: 10px;
+	margin-bottom: 15px;
 }
 .center {
 	text-align: center;
-	background-color: #a3a3c2;
+	background-color: white;
 }
 .left{
 	text-align: left;
@@ -16,14 +18,11 @@
 .tmbl{
 	text-align: center;
 	width: 100%;
-	background-color: red;
+	background-color: #2b5c73;
 	color: white;
 	font-weight: bold;
 
 }
 .disini{
 	padding-bottom: 10px;
-}
-.baru{
-	bg-color: #a3a3c2;
 }

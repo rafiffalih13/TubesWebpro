@@ -18,8 +18,8 @@
 	width: 100%;
 }
 #category{
-	font-weight: bold;
-	color: red;
+	/*font-weight: bold;*/
+	color: #343a40;
 	/*font-family: "Comic Sans MS";*/
 }
 #item{
@@ -27,18 +27,19 @@
 	margin: 20px 20px 30px 20px;
 	/*background-color: gray;*/
 	border: 1px solid gray;
+	color: black;
+	text-decoration: none;
 	
 }
 #item-img{
 	padding: 20px 0px 0px 0px;
+	height: auto;
+	width: 100%;
+	overflow: hidden;
 	max-width: 200px;
 	max-height: 200px;
 }
-a{
-	color: black;
-	text-decoration: none;
-}
-a:hover{
+#item:hover{
 	color: black;
 	text-decoration: none;
 }

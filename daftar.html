@@ -2,78 +2,68 @@
 <html>
 <head>
 	<title>Daftar Akun</title>
+	<!-- Icon Title -->
+	<link rel="icon" type="image/png" href="img/logo1.png">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/daftar.css">
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script src="js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript">
-		function validate(evt) {
-		  var theEvent = evt || window.event;
-		  var key = theEvent.keyCode || theEvent.which;
-		  key = String.fromCharCode( key );
-		  var regex = /[0-9]|\./;
-		  if( !regex.test(key) ) {
-		    theEvent.returnValue = false;
-		    if(theEvent.preventDefault) theEvent.preventDefault();
-		    alert("Harus diisi oleh numeric")
-		  }
-		}
-	</script>
+	<script type="text/javascript" src="js/daftar.js"></script>
 </head>
 <body>
 	<div class="container">
 		<div class="row">
 			
 			<div class="col"></div>
-			<div class="col-6 center" >
-				<div class="baru" style="background-color: #a3a3c2;">
-					<img class="logo" src="img/logo.png">
-					<div class="daftar">
-						Daftar Akun Sekarang
-					</div>
-					<div class="disini">
-						<p>Sudah punya akun? klik <a href="login.html">disini</a></p>
-					</div>
-					<form>
-							<div class="form-group">
-						<div class="col-sm-15">
-								<input name="nama" type="text" class="form-control" placeholder="Nama Lengkap" required/>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-sm-19">
-								<input name="email" type="email" class="form-control" placeholder="Email" required/>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-sm-19">
-								<input name="username Akun" type="text" class="form-control" placeholder="Username" required/>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-sm-19">
-								<input name="password Akun" type="password" class="form-control" placeholder="Password Akun" required/>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-sm-19">
-								<input name="tlp" type="text" onkeypress="validate(event)" class="form-control" placeholder="Nomor Telepon" required/>
-							</div>
-						</div>
-						<div class="form-group left">
-							<div class="col-sm-19">
-								<input type="radio" name="jk" value="laki-laki" required>Laki-Laki
-								<input type="radio" name="jk" value="Perempuan">Perempuan
-							</div>
-						</div>
-						<div class="form-group left">
-							<div class="col-sm-0">
-								<p>Dengan klik daftar, kamu telah menyetujui Aturan Penggunaan dan Kebijakan Privasi dari -Nama-</p>
-								<button type="submit" class="btn tmbl">DAFTAR</button>
-							</div>
-						</div>
-					</form>
+			<div class="col-4 center">
+				<a href="index.html">
+					<img class="logo" src="img/logo1.png">
+				</a>
+				<div class="daftar">
+					Daftar Akun Sekarang
 				</div>
+				<div class="disini">
+					<p>Sudah punya akun? klik <a href="login.html">disini</a></p>
+				</div>
+				<form>
+					<div class="form-group">
+						<div class="col-sm-15">
+							<input name="nama" type="text" class="form-control" placeholder="Nama Lengkap" required/>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-19">
+							<input name="email" type="email" class="form-control" placeholder="Email" required/>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-19">
+							<input name="username Akun" type="text" class="form-control" placeholder="Username" required/>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-19">
+							<input name="password Akun" type="password" class="form-control" placeholder="Password Akun" required/>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-19">
+							<input name="tlp" type="text" onkeypress="validate(event)" class="form-control" placeholder="Nomor Telepon" required/>
+						</div>
+					</div>
+					<div class="form-group left">
+						<div class="col-sm-19">
+							<input type="radio" name="jk" value="laki-laki" required>Laki-Laki
+							<input type="radio" name="jk" value="Perempuan">Perempuan
+						</div>
+					</div>
+					<div class="form-group left">
+						<div class="col-sm-0">
+							<p>Dengan klik daftar, kamu telah menyetujui Aturan Penggunaan dan Kebijakan Privasi dari Big Shop</p>
+							<button type="submit" class="btn tmbl">DAFTAR</button>
+						</div>
+					</div>
+				</form>
 			</div>
 			<div class="col"></div>
 		</div>			
