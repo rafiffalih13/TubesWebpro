@@ -3,18 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>TUBES 1 PAGE 2</title>
+<<<<<<< HEAD
+	   <!-- CSS -->
+     <link rel="stylesheet" type="text/css" href="css/tampilan.css" />
+     <link rel="stylesheet" href="css/keranjang.css">
+    <!-- bootstrap -->
+=======
     <!-- Icon Title -->
     <link rel="icon" type="image/png" href="img/logo1.png">
+>>>>>>> d3d0f920b96754a5ebf3db66ba8f1c628fab9248
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- ajax -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!-- CSS NAVBAR -->
-    <link rel="stylesheet" type="text/css" href="css/tampilan.css" />
-    <link rel="stylesheet" href="css/keranjang.css">
   </head>
   <body>
-
+    <!-- navbar -->
     <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">&#x2630;</button> <a class="navbar-brand kiri" href="index.html"><img src="img/logo.png" alt="" width="auto" height="35"> </a>
         <div
@@ -53,32 +59,35 @@
             </ul>
             </div>
     </nav>
-
+    <!-- navbar -->
     <div class="container">
       <div class="row">
         <div class="col-sm-3.5" >
+          <!-- detail barang di beli 1  -->
           <img src="img/sepatu.jpg" id="gambar" alt="logo">
         </div>
         <div class="col-sm-4" id="barang">
           <form action="/action_page.php" id="form2">
              <div class="form-group">
                <label for="nama">Nama:</label>
-               <input disabled type="text" class="form-control" id="nama" placeholder="Converse Jack Purcell Pro">
+               <input disabled type="text" class="form-control" id="nama0">
              </div>
              <div class="form-group">
                <label for="harga">Harga:</label>
-               <input disabled type="text" class="form-control" id="harga" value="1000000">
+               <input disabled type="text" class="form-control" id="harga0">
              </div>
              <div class="form-group">
                <label for="stock">Kuantitas:</label> <br>
                <button type="button" class="btn btn-default" name="min" id="min">-</button>
-               <input type="text" id="kuantitas" name="kuantitas" >
+               <input disabled type="text" id="kuantitas" name="kuantitas" >
                <button type="button" class="btn btn-default" name="plus" id="plus">+</button>
              </div>
              <button type="submit" class="btn btn-default" id="btndel"><img src="img/trash.jpg" id="trash"></button>
           </form>
         </div>
+        <!-- detail barang di beli 1  -->
         <div class="col-sm-4">
+          <!-- form keranjang  -->
           <form action="/action_page.php" id="form1">
              <div class="form-group">
                <label for="total">Total Harga Barang :</label>
@@ -94,10 +103,11 @@
              </div>
              <button type="submit" class="btn btn-default" id="btnbuy">Lanjutkan Pembayaran</button>
           </form>
+          <!-- form keranjang -->
         </div>
       </div>
 
-
+      <!-- detail barang di beli 2  -->
       <div class="row" id="row1">
         <div class="col-sm-3.5" id="column1">
           <img src="img/tas2.jpg" id="gambar" alt="logo">
@@ -106,24 +116,41 @@
           <form action="/action_page.php">
              <div class="form-group">
                <label for="nama">Nama:</label>
-               <input disabled type="text" class="form-control" id="nama" placeholder="Nylon Dayback Casual Laptop Bag">
+               <input disabled type="text" class="form-control" id="nama1">
              </div>
              <div class="form-group">
                <label for="harga">Harga:</label>
-               <input disabled type="text" class="form-control" id="harga1" value="500000">
+               <input disabled type="text" class="form-control" id="harga1">
              </div>
              <div class="form-group">
                <label for="stock">Kuantitas:</label> <br>
                <button type="button" class="btn btn-default" name="min" id="min2">-</button>
-               <input type="text" id="kuantitas2" name="kuantitas2">
+               <input disabled type="text" id="kuantitas2" name="kuantitas2">
                <button type="button" class="btn btn-default" name="plus" id="plus2">+</button>
              </div>
              <button type="submit" class="btn btn-default" id="btndel"><img src="img/trash.jpg" id="trash"></button>
           </form>
         </div>
       </div>
-
+      <!-- detail barang di beli 2  -->
     </div>
+    <script>
+        $(document).ready(function () {
+            $.getJSON("json/keranjang.json",function (data) {
+                console.log(data);
+                var u = 0;
+                var i = 0;
+                $.each(data.barang, function (i, barang) {
+                    $("#nama"+i).val(barang.name);
+                    $("#harga"+i).val(barang.harga);
+                    i++;
+                    if(i == 3){
+                        return false;
+                    }
+                })
+              })
+        });
+    </script>
 
     <!--Footer-->
     <footer class="panel-footer panel-inverse font-small  pt-4 mt-4">
