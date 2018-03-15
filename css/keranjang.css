@@ -44,6 +44,9 @@ h1{
   width: 50px;
   text-align: center;
   border: none;
+  background-color: white;
+  color: black;
+
 }
 
 #plus, #min{
