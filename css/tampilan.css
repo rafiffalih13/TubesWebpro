@@ -17,6 +17,12 @@
     height: 50px;
 }
 
+.imgproduk{
+    width: 90%;
+    height: auto;
+    margin-bottom: 50px;
+}
+
 .imgProduct{
     width: 100%;
     height: auto;
