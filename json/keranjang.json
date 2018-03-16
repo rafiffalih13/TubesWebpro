@@ -1,0 +1,11 @@
+{ "barang" :[
+    {
+      "name" : "Converse Jack Purcell Pro",
+      "harga" : "1000000"
+    },
+    {
+      "name" : "Nylon Dayback Casual Laptop Bag",
+      "harga" : "500000"
+    }
+  ]
+}

@@ -1,11 +1,10 @@
-function validate(evt) {
-	var theEvent = evt || window.event;
-	var key = theEvent.keyCode || theEvent.which;
-	key = String.fromCharCode( key );
-	var regex = /[0-9]|\./;
-	if( !regex.test(key) ) {
-		theEvent.returnValue = false;
-		if(theEvent.preventDefault) theEvent.preventDefault();
-		alert("Harus diisi oleh numeric")
-	}
-}
+function vlds(evt) {
+  var even = evt || window.event;
+  var karakter = even.keyCode || even.which;
+  karakter = String.fromCharCode( karakter );
+  var regex = /[0-9]|\./;
+  if( !regex.test(karakter) ) {
+    even.returnValue = false;
+    if(even.preventDefault) even.preventDefault();
+  }
+};

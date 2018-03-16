@@ -2,23 +2,30 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>TUBES 1</title>
+    <title>Detail Barang</title>
+<<<<<<< HEAD
+=======
+    <!-- Icon title -->
+    <link rel="icon" type="image/png" href="img/logo1.png">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+>>>>>>> d3d0f920b96754a5ebf3db66ba8f1c628fab9248
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-    <link rel="stylesheet" type="text/css" href="css/tampilan.css" />
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- bootstrap -->
     <script src="js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <!-- ajax -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!-- CSS NAVBAR -->
+	   <!-- CSS  -->
+     <link rel="stylesheet" type="text/css" href="css/tampilan.css" />
     <link rel="stylesheet" type="text/css" href="css/tampilan.css" />
     <link rel="stylesheet" href="css/barang.css">
   </head>
   <body>
-
+    <!-- navbar -->
     <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">&#x2630;</button> <a class="navbar-brand kiri" href="index.html"><img src="img/logo.png" alt="" width="auto" height="35"> </a>
         <div
@@ -50,91 +57,60 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav ml-auto samping">
-                <li class="nav-item"><a href="#myPage" class="nav-link"><span class="glyphicon glyphicon-user"></span><span>       </span>DAFTAR</a>
+                <li class="nav-item"><a href="daftar.html" class="nav-link"><span class="glyphicon glyphicon-user"></span><span>       </span>DAFTAR</a>
                 </li>
-                <li class="nav-item"><a href="#band" class="nav-link"><span class="fa fa-man"></span><span>    </span>MASUK</a>
+                <li class="nav-item"><a href="login.html" class="nav-link"><span class="fa fa-man"></span><span>    </span>MASUK</a>
                 </li>
             </ul>
             </div>
     </nav>
-
+    <!-- navbar -->
     <div class="container">
       <div class="row">
         <div class="col" id="column1">
           <img src="img/sepatu.jpg" id="gambar" alt="logo" width="400" height="254">
         </div>
         <div class="col" id="column2">
+          <!-- form barang -->
           <form action="/action_page.php">
              <div class="form-group">
                <label for="nama">Nama:</label>
-               <input disabled type="text" class="form-control" id="nama" placeholder="Converse Jack Purcell Pro">
+               <input disabled type="text" class="form-control" id="nama0" >
              </div>
              <div class="form-group">
                <label for="harga">Harga:</label>
-               <input disabled type="text" class="form-control" id="harga" placeholder="Rp.1.000.000">
+               <input disabled type="text" class="form-control" id="harga0" >
              </div>
              <div class="form-group">
                <label for="stock">Stock:</label>
-               <input disabled type="text" class="form-control" id="stock" placeholder="Stock 5 tersedia">
+               <input disabled type="text" class="form-control" id="stock0" >
              </div>
              <button type="submit" class="btn btn-default" id="btnadd">Add Barang</button>
           </form>
+          <!-- form barang  -->
 
 
         </div>
       </div>
     </div>
 
+    <script>
+      $(document).ready(function () {
+          $.getJSON("json/barang.json",function (data) {
+              console.log(data);
+              var i = 0;
+                $("#nama"+i).val(data.barang.name);
+                $("#harga"+i).val(data.barang.harga);
+                $("#stock"+i).val(data.barang.stok);
+      })
+      });
+    </script>
+
     <!--Footer-->
-    <footer class="panel-footer panel-inverse font-small  pt-4 mt-4">
+    <footer class="page-footer font-small stylish-color-dark pt-4 mt-4">
 
           <!--Footer Links-->
           <div class="container ">
-
-              <!-- Footer links -->
-              <div>
-
-                  <!--First column-->
-                  <div class="col-md-3 col-lg-3 col-xl-3">
-                      <h6 class="text-uppercase mb-4 font-weight-bold">Company name</h6>
-                      <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                  <!--/.First column-->
-
-                  <!--Second column-->
-                  <div class="text-left col-md-2 col-lg-2 col-xl-2">
-                      <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
-                      <p><a href="#!">MDBootstrap</a></p>
-                      <p><a href="#!">MDWordPress</a></p>
-                      <p><a href="#!">BrandFlow</a></p>
-                      <p><a href="#!">Bootstrap Angular</a></p>
-                  </div>
-                  <!--/.Second column-->
-
-
-                  <!--Third column-->
-                  <div class="col-md-3 col-lg-2 col-xl-2">
-                      <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
-                      <p><a href="#!">Your Account</a></p>
-                      <p><a href="#!">Become an Affiliate</a></p>
-                      <p><a href="#!">Shipping Rates</a></p>
-                      <p><a href="#!">Help</a></p>
-                  </div>
-                  <!--/.Third column-->
-
-
-                  <!--Fourth column-->
-                  <div class="text-md-right text-left col-md-4 col-lg-3 col-xl-3 ">
-                      <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-                      <p><i class="glyphicon glyphicon-home mr-3"></i> New York, NY 10012, US</p>
-                      <p><i class="glyphicon glyphicon-envelope mr-3"></i> info@gmail.com</p>
-                      <p><i class="glyphicon glyphicon-phone mr-3"></i> + 01 234 567 88</p>
-                  </div>
-                  <!--/.Fourth column-->
-
-              </div>
-              <!-- Footer links -->
-
               <hr>
 
               <div class="row py-3 d-flex">
@@ -143,7 +119,7 @@
                   <div class="col-md-8 col-lg-8">
 
                       <!--Copyright-->
-                      <p class="text-md-left grey-text">© 2018 Copyright: <a href="https://mdbootstrap.com/material-design-for-bootstrap/"><strong> MDBootstrap.com</strong></a></p>
+                      <p class="text-md-left grey-text">© 2018 Copyright: <a href="#"><strong> Big-Shop.com</strong></a></p>
                       <!--/.Copyright-->
 
                   </div>

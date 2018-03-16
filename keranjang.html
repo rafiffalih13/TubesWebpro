@@ -2,17 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>TUBES 1 PAGE 2</title>
+    <title>Keranjang Barang</title>
+<<<<<<< HEAD
+	   <!-- CSS -->
+     <link rel="stylesheet" type="text/css" href="css/tampilan.css" />
+     <link rel="stylesheet" href="css/keranjang.css">
+    <!-- bootstrap -->
+=======
+    <!-- Icon Title -->
+    <link rel="icon" type="image/png" href="img/logo1.png">
+>>>>>>> d3d0f920b96754a5ebf3db66ba8f1c628fab9248
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- ajax -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!-- CSS NAVBAR -->
-    <link rel="stylesheet" type="text/css" href="css/tampilan.css" />
-    <link rel="stylesheet" href="css/keranjang.css">
   </head>
   <body>
-
+    <!-- navbar -->
     <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">&#x2630;</button> <a class="navbar-brand kiri" href="index.html"><img src="img/logo.png" alt="" width="auto" height="35"> </a>
         <div
@@ -51,32 +59,35 @@
             </ul>
             </div>
     </nav>
-
+    <!-- navbar -->
     <div class="container">
       <div class="row">
         <div class="col-sm-3.5" >
+          <!-- detail barang di beli 1  -->
           <img src="img/sepatu.jpg" id="gambar" alt="logo">
         </div>
         <div class="col-sm-4" id="barang">
           <form action="/action_page.php" id="form2">
              <div class="form-group">
                <label for="nama">Nama:</label>
-               <input disabled type="text" class="form-control" id="nama" placeholder="Converse Jack Purcell Pro">
+               <input disabled type="text" class="form-control" id="nama0">
              </div>
              <div class="form-group">
                <label for="harga">Harga:</label>
-               <input disabled type="text" class="form-control" id="harga" value="1000000">
+               <input disabled type="text" class="form-control" id="harga0">
              </div>
              <div class="form-group">
                <label for="stock">Kuantitas:</label> <br>
                <button type="button" class="btn btn-default" name="min" id="min">-</button>
-               <input type="text" id="kuantitas" name="kuantitas" >
+               <input disabled type="text" id="kuantitas" name="kuantitas" >
                <button type="button" class="btn btn-default" name="plus" id="plus">+</button>
              </div>
              <button type="submit" class="btn btn-default" id="btndel"><img src="img/trash.jpg" id="trash"></button>
           </form>
         </div>
+        <!-- detail barang di beli 1  -->
         <div class="col-sm-4">
+          <!-- form keranjang  -->
           <form action="/action_page.php" id="form1">
              <div class="form-group">
                <label for="total">Total Harga Barang :</label>
@@ -92,10 +103,11 @@
              </div>
              <button type="submit" class="btn btn-default" id="btnbuy">Lanjutkan Pembayaran</button>
           </form>
+          <!-- form keranjang -->
         </div>
       </div>
 
-
+      <!-- detail barang di beli 2  -->
       <div class="row" id="row1">
         <div class="col-sm-3.5" id="column1">
           <img src="img/tas2.jpg" id="gambar" alt="logo">
@@ -104,75 +116,47 @@
           <form action="/action_page.php">
              <div class="form-group">
                <label for="nama">Nama:</label>
-               <input disabled type="text" class="form-control" id="nama" placeholder="Nylon Dayback Casual Laptop Bag">
+               <input disabled type="text" class="form-control" id="nama1">
              </div>
              <div class="form-group">
                <label for="harga">Harga:</label>
-               <input disabled type="text" class="form-control" id="harga1" value="500000">
+               <input disabled type="text" class="form-control" id="harga1">
              </div>
              <div class="form-group">
                <label for="stock">Kuantitas:</label> <br>
                <button type="button" class="btn btn-default" name="min" id="min2">-</button>
-               <input type="text" id="kuantitas2" name="kuantitas2">
+               <input disabled type="text" id="kuantitas2" name="kuantitas2">
                <button type="button" class="btn btn-default" name="plus" id="plus2">+</button>
              </div>
              <button type="submit" class="btn btn-default" id="btndel"><img src="img/trash.jpg" id="trash"></button>
           </form>
         </div>
       </div>
-
+      <!-- detail barang di beli 2  -->
     </div>
+    <script>
+        $(document).ready(function () {
+            $.getJSON("json/keranjang.json",function (data) {
+                console.log(data);
+                var u = 0;
+                var i = 0;
+                $.each(data.barang, function (i, barang) {
+                    $("#nama"+i).val(barang.name);
+                    $("#harga"+i).val(barang.harga);
+                    i++;
+                    if(i == 3){
+                        return false;
+                    }
+                })
+              })
+        });
+    </script>
 
     <!--Footer-->
-    <footer class="panel-footer panel-inverse font-small  pt-4 mt-4">
+    <footer class="page-footer font-small stylish-color-dark pt-4 mt-4">
 
           <!--Footer Links-->
           <div class="container ">
-
-              <!-- Footer links -->
-              <div>
-
-                  <!--First column-->
-                  <div class="col-md-3 col-lg-3 col-xl-3">
-                      <h6 class="text-uppercase mb-4 font-weight-bold">Company name</h6>
-                      <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                  <!--/.First column-->
-
-                  <!--Second column-->
-                  <div class="text-left col-md-2 col-lg-2 col-xl-2">
-                      <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
-                      <p><a href="#!">MDBootstrap</a></p>
-                      <p><a href="#!">MDWordPress</a></p>
-                      <p><a href="#!">BrandFlow</a></p>
-                      <p><a href="#!">Bootstrap Angular</a></p>
-                  </div>
-                  <!--/.Second column-->
-
-
-                  <!--Third column-->
-                  <div class="col-md-3 col-lg-2 col-xl-2">
-                      <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
-                      <p><a href="#!">Your Account</a></p>
-                      <p><a href="#!">Become an Affiliate</a></p>
-                      <p><a href="#!">Shipping Rates</a></p>
-                      <p><a href="#!">Help</a></p>
-                  </div>
-                  <!--/.Third column-->
-
-
-                  <!--Fourth column-->
-                  <div class="text-md-right text-left col-md-4 col-lg-3 col-xl-3 ">
-                      <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-                      <p><i class="glyphicon glyphicon-home mr-3"></i> New York, NY 10012, US</p>
-                      <p><i class="glyphicon glyphicon-envelope mr-3"></i> info@gmail.com</p>
-                      <p><i class="glyphicon glyphicon-phone mr-3"></i> + 01 234 567 88</p>
-                  </div>
-                  <!--/.Fourth column-->
-
-              </div>
-              <!-- Footer links -->
-
               <hr>
 
               <div class="row py-3 d-flex">
@@ -181,7 +165,7 @@
                   <div class="col-md-8 col-lg-8">
 
                       <!--Copyright-->
-                      <p class="text-md-left grey-text">© 2018 Copyright: <a href="https://mdbootstrap.com/material-design-for-bootstrap/"><strong> MDBootstrap.com</strong></a></p>
+                      <p class="text-md-left grey-text">© 2018 Copyright: <a href="#"><strong> Big-Shop.com</strong></a></p>
                       <!--/.Copyright-->
 
                   </div>

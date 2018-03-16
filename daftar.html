@@ -2,17 +2,28 @@
 <html>
 <head>
 	<title>Daftar Akun</title>
+	<!-- Icon Title -->
+	<link rel="icon" type="image/png" href="img/logo1.png">
+	<!-- bootstrap css -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!-- daftar.html css -->
 	<link rel="stylesheet" type="text/css" href="css/daftar.css">
+	<!-- bootstrap js -->
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script src="js/jquery-3.3.1.min.js"></script>
+	<!-- jquery -->
+	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	<!-- plugin validasi form -->
+	<script type="text/javascript" src="js/jquery.validate.js"></script>
+	<!-- rules & massage validasi form -->
+	<script src="js/form-validasi.js"></script>
+	<!-- javascript agar form nomor telfon hanya bisa numeric -->
 	<script type="text/javascript" src="js/daftar.js"></script>
 </head>
 <body>
 	<div class="container">
 		<div class="row">
-			
 			<div class="col"></div>
+			<!-- Center Div -->
 			<div class="col-4 center">
 				<a href="index.html">
 					<img class="logo" src="img/logo1.png">
@@ -21,37 +32,43 @@
 					Daftar Akun Sekarang
 				</div>
 				<div class="disini">
-					<p>Sudah punya akun? klik <a href="login.html">disini</a></p>
+					<p>Sudah punya akun? klik <a href="login.html" style="color: ">disini</a></p>
 				</div>
-				<form>
+				<!-- Form Daftar Start -->
+				<form id="FormDaftar">
 					<div class="form-group">
 						<div class="col-sm-15">
-							<input name="nama" type="text" class="form-control" placeholder="Nama Lengkap" required/>
+							<input name="namalengkap" id="namalengkap" type="text" class="form-control" placeholder="Nama Lengkap" />
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-19">
-							<input name="email" type="email" class="form-control" placeholder="Email" required/>
+							<input name="email" id="email" type="email" class="form-control" placeholder="Email" />
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-19">
-							<input name="username Akun" type="text" class="form-control" placeholder="Username" required/>
+							<input name="username" id="username" type="text" class="form-control" placeholder="Username" />
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-19">
-							<input name="password Akun" type="password" class="form-control" placeholder="Password Akun" required/>
+							<input name="password" id="password" type="password" class="form-control" placeholder="Password Akun" />
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-19">
-							<input name="tlp" type="text" onkeypress="validate(event)" class="form-control" placeholder="Nomor Telepon" required/>
+							<input name="confpassword" id="confpassword" type="password" class="form-control" placeholder="Konfirmasi Password" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-19">
+							<input name="tlp" type="text" onkeypress="vlds(event)" class="form-control" placeholder="Nomor Telepon" />
 						</div>
 					</div>
 					<div class="form-group left">
 						<div class="col-sm-19">
-							<input type="radio" name="jk" value="laki-laki" required>Laki-Laki
+							<input type="radio" name="jk" value="laki-laki" >Laki-Laki
 							<input type="radio" name="jk" value="Perempuan">Perempuan
 						</div>
 					</div>
@@ -62,10 +79,11 @@
 						</div>
 					</div>
 				</form>
+				<!-- Form Daftar End -->
 			</div>
+			<!-- Center Div end -->
 			<div class="col"></div>
 		</div>			
 	</div>
-
 </body>
 </html>
